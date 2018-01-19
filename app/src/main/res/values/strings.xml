@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ωδικά Πουλιά</string>
+    <string name="arxikitext">Ωδικά Πουλιά</string>
+    <string name="arxikibuttontext">Πάμε να τα δούμε!!!</string>
+    <string name="textview">TextView</string>
+    <string name="buttonkartelatext">ΠΙΣΩ ΣΤΑ ΠΟΥΛΙΑ</string>
+    <string name="todo">TODO</string>
+    <string name="listatop">Δείτε την Λίστα με τα πουλιά και πατήστε πάνω για να δείτε λεπτομέρειες.</string>
+    <string name="aa">Α/Α</string>
+    <string name="birdstext">Πουλιά</string>
+</resources>
