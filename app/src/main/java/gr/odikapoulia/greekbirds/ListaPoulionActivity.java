@@ -25,7 +25,6 @@ public class ListaPoulionActivity extends AppCompatActivity {
 
     private ListView lv;
     int numOfBirds = 1;
-    int birdVersion = 1;
     String internetCheck;
 
 
@@ -66,7 +65,7 @@ public class ListaPoulionActivity extends AppCompatActivity {
 
                 int checkBirds = resultSet.getCount();
 
-                if(checkBirds != numOfBirds|| birdVersion!=1){
+                if(checkBirds != numOfBirds){
 
                     mydatabase.execSQL("DROP TABLE IF EXISTS birdlist;");
 
