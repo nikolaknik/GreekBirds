@@ -10,6 +10,8 @@ import android.content.Intent;
 
 import android.os.AsyncTask;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -32,6 +34,9 @@ public class ListaPoulionActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
 
         Intent intent = getIntent();
@@ -137,7 +142,7 @@ public class ListaPoulionActivity extends AppCompatActivity {
            @Override
            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg3) {
         // TODO Auto-generated method stub
-            TextView bird_id = (TextView) view.findViewById(R.id.birdid);
+            TextView bird_id = view.findViewById(R.id.birdid);
             String birdid = bird_id.getText().toString();
             Intent intent = new Intent(ListaPoulionActivity.this, KartelaPouliouActivity.class);
             intent.putExtra("birdid", birdid);
