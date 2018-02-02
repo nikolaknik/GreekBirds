@@ -41,7 +41,11 @@ public class KartelaPouliouActivity extends AppCompatActivity {
 
         mediaPlayer.reset();
 
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        getIntent().setAction("");
         startActivity(intent);
+
 
     }
 
@@ -69,6 +73,9 @@ public class KartelaPouliouActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mediaPlayer.stop();
                 Intent intent = new Intent(getApplicationContext(), ListaPoulionActivity.class);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                getIntent().setAction("");
                 startActivity(intent);
             }
         });
