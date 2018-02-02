@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
-    String internetCheck;
+    Boolean internetCheck;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +30,13 @@ public class MainActivity extends AppCompatActivity {
 
                 if(myIncheck.isNetworkAvailable(getApplicationContext())){
 
-                    internetCheck = "internetOk";
+                    internetCheck = true;
 
                     System.out.println(internetCheck);
 
                 }else{
 
-                    internetCheck = "internetNotOk";
+                    internetCheck = false;
 
                     System.out.println(internetCheck);
 
@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent intent = new Intent(MainActivity.this, ListaPoulionActivity.class);
-                intent.putExtra("internetCheck",internetCheck);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
