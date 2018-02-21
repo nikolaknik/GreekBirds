@@ -19,9 +19,15 @@ import android.text.method.ScrollingMovementMethod;
 import android.widget.SeekBar;
 import android.os.Handler;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 public class KartelaPouliouActivity extends AppCompatActivity {
 
-    String internetCheck;
+
+    public Boolean internetCheck;
+    private AdView mAdView;
     private ImageButton soundButton,b2;
     public MediaPlayer mediaPlayer;
     private double startTime = 0;
@@ -57,13 +63,30 @@ public class KartelaPouliouActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
 
-        Intent intent = getIntent();
-        internetCheck = intent.getStringExtra("internetCheck");
-        System.out.println("internetCheck"+internetCheck);
-
         setContentView(R.layout.activity_kartela_pouliou);
 
-        Button buttonBack;
+            InternetCheck myIncheck = new InternetCheck();
+
+            if(myIncheck.isNetworkAvailable(getApplicationContext())){
+
+                internetCheck = true;
+
+                MobileAds.initialize(this, "ca-app-pub-7771856024571036~9477512340");
+                mAdView = findViewById(R.id.adView);
+                AdRequest adRequest = new AdRequest.Builder().build();
+                mAdView.loadAd(adRequest);
+
+
+            }else{
+
+                internetCheck = false;
+
+                findViewById(R.id.adView).setVisibility(View.INVISIBLE);
+            }
+
+
+
+            Button buttonBack;
 
         buttonBack = (Button)findViewById(R.id.buttonBack);
 
@@ -80,7 +103,7 @@ public class KartelaPouliouActivity extends AppCompatActivity {
             }
         });
 
-
+        Intent intent = getIntent();
         // fetch value from key-value pair and make it visible on TextView.
         String birdidFromList = intent.getStringExtra("birdid");
         System.out.println("birdidFromList "+birdidFromList);

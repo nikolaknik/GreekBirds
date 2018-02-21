@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context="gr.odikapoulia.greekbirds.KartelaPouliouActivity">
 
-
-
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -25,6 +23,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/birdName" />
 
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-7771856024571036/4408663276"
+            ads:layout_constraintLeft_toLeftOf="parent"
+            ads:layout_constraintRight_toRightOf="parent"
+            ads:layout_constraintTop_toTopOf="parent"
+            ads:layout_constraintBottom_toTopOf="@+id/birdName"></com.google.android.gms.ads.AdView>
+
         <TextView
             android:id="@+id/birdName"
             android:layout_width="0dp"
@@ -33,17 +45,16 @@
             android:layout_marginTop="16dp"
             android:background="@android:drawable/editbox_background_normal"
             android:text="@string/textview"
-            android:textSize="23sp"
+            android:textAlignment="center"
+            android:textSize="26sp"
             android:textStyle="bold"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/adView" />
 
         <ImageButton
             android:id="@+id/bird_sound"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
             android:layout_alignEnd="@+id/birdName"
             android:layout_alignRight="@+id/birdName"
             android:layout_alignTop="@+id/birdName"
@@ -53,16 +64,16 @@
             android:cropToPadding="true"
             android:scaleType="fitCenter"
             android:src="@drawable/play"
-            android:visibility="visible"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/birdImage"
             app:layout_constraintEnd_toStartOf="@+id/seekBar"
             app:layout_constraintTop_toTopOf="@+id/birdName"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <SeekBar
             android:id="@+id/seekBar"
-            android:layout_width="68dp"
-            android:layout_height="27dp"
             android:layout_above="@+id/bird_sound"
             android:layout_alignEnd="@+id/bird_sound"
             android:layout_alignLeft="@+id/bird_sound"
@@ -70,29 +81,33 @@
             android:layout_alignStart="@+id/bird_sound"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/birdImage"
             app:layout_constraintEnd_toStartOf="@+id/bird_sound_pouse"
             app:layout_constraintTop_toTopOf="@+id/birdName"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <ImageButton
             android:id="@+id/bird_sound_pouse"
-            android:layout_width="33dp"
-            android:layout_height="35dp"
             android:layout_alignLeft="@+id/seekBar"
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/seekBar"
             android:layout_marginBottom="8dp"
             android:layout_marginRight="16dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/pause"
-            android:cropToPadding="true"
             android:background="@android:color/transparent"
+            android:cropToPadding="true"
+            android:src="@drawable/pause"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="@+id/birdName"
             app:layout_constraintEnd_toEndOf="@+id/birdName"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@+id/birdName"
-            app:layout_constraintVertical_bias="0.25" />
+            app:layout_constraintVertical_bias="0.25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
 
         <TextView
@@ -129,10 +144,9 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="30dp"
-            android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="8dp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/birdImage"
             app:layout_constraintEnd_toStartOf="@+id/bird_sound"
             app:layout_constraintHorizontal_bias="0.899"
@@ -141,7 +155,9 @@
             app:layout_constraintStart_toStartOf="@+id/birdName"
             app:layout_constraintTop_toTopOf="@+id/birdName"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/sound" />
+            app:srcCompat="@drawable/sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </android.support.constraint.ConstraintLayout>
 
