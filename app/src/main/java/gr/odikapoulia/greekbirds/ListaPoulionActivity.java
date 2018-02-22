@@ -160,7 +160,7 @@ public class ListaPoulionActivity extends AppCompatActivity {
 
                 mydatabase.execSQL("CREATE TABLE IF NOT EXISTS birdlist (Id INTEGER PRIMARY KEY AUTOINCREMENT, Birdname VARCHAR , BirdInfo VARCHAR , Photo VARCHAR, Result VARCHAR);");
 
-                Cursor resultSet = mydatabase.rawQuery("Select * from birdlist ", null);
+                Cursor resultSet = mydatabase.rawQuery("Select * from birdlist", null);
 
                 int checkBirds = resultSet.getCount();
 
@@ -178,7 +178,7 @@ public class ListaPoulionActivity extends AppCompatActivity {
                 int sumForum = 0;
                 String sumForumStr;
 
-                Cursor allBirds = mydatabase.rawQuery("Select * from birdlist ", null);
+                Cursor allBirds = mydatabase.rawQuery("Select * from birdlist order by Birdname", null);
 
                 if (allBirds.moveToFirst()) {
                                 while (allBirds.isAfterLast()==false) {
