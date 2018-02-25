@@ -35,7 +35,7 @@ import android.media.MediaPlayer;
 public class ListaPoulionActivity extends AppCompatActivity {
 
     private ListView lv;
-    int numOfBirds = 1;
+    int numOfBirds = 12;
     public Boolean internetCheck;
     private AdView mAdView;
     public MediaPlayer mediaPlayer;
