@@ -35,7 +35,7 @@ import android.media.MediaPlayer;
 public class ListaPoulionActivity extends AppCompatActivity {
 
     private ListView lv;
-    int numOfBirds = 12;
+    int numOfBirds = 1;
     public Boolean internetCheck;
     private AdView mAdView;
     public MediaPlayer mediaPlayer;
@@ -163,6 +163,7 @@ public class ListaPoulionActivity extends AppCompatActivity {
                 Cursor resultSet = mydatabase.rawQuery("Select * from birdlist", null);
 
                 int checkBirds = resultSet.getCount();
+                System.out.println("checkBirds "+checkBirds);
 
                 if(checkBirds != numOfBirds){
 
