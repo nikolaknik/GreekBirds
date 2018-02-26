@@ -9,18 +9,17 @@
 
     <TextView
         android:id="@+id/wellcome_post"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:background="#ecefe0"
+        android:layout_marginTop="4dp"
         android:text="@string/listatop"
         android:textAlignment="center"
         android:textIsSelectable="false"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/infoButton"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -52,6 +51,19 @@
         ads:layout_constraintLeft_toLeftOf="parent"
         ads:layout_constraintRight_toRightOf="parent"
         ads:layout_constraintTop_toBottomOf="@+id/bird_list"></com.google.android.gms.ads.AdView>
+
+    <Button
+        android:id="@+id/infoButton"
+        android:layout_width="73dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="4dp"
+        android:text="Πληροφοριες Εφαρμογής"
+        android:textSize="7sp"
+        app:layout_constraintBottom_toTopOf="@+id/bird_list"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/wellcome_post"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </android.support.constraint.ConstraintLayout>
