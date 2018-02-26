@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.text.Html;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -30,6 +31,8 @@ import android.view.LayoutInflater;
 import android.widget.ImageButton;
 import android.view.ViewGroup.LayoutParams;
 import android.media.MediaPlayer;
+
+import static android.text.Html.escapeHtml;
 
 
 public class ListaPoulionActivity extends AppCompatActivity {
@@ -172,6 +175,7 @@ public class ListaPoulionActivity extends AppCompatActivity {
                     mydatabase.execSQL("CREATE TABLE IF NOT EXISTS birdlist (Id INTEGER PRIMARY KEY AUTOINCREMENT, Birdname VARCHAR , BirdInfo VARCHAR , Photo VARCHAR, Result VARCHAR);");
 
                     mydatabase.execSQL(new QueryInsert().QueryInsert());
+                    mydatabase.execSQL(new QueryInsert().QueryInsert2());
                 }
 
                 BirdList = new ArrayList<>();
@@ -191,6 +195,8 @@ public class ListaPoulionActivity extends AppCompatActivity {
                                     String birdname = allBirds.getString(allBirds.getColumnIndex("Birdname"));
 
                                     System.out.println("birdname "+birdname);
+
+                                    Html.fromHtml(birdname);
 
                                     String birdid = allBirds.getString(allBirds.getColumnIndex("Id"));
 
@@ -227,7 +233,6 @@ public class ListaPoulionActivity extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
             lv = (ListView) findViewById(R.id.bird_list);
-
            ListAdapter adapter = new SimpleAdapter(getBaseContext(), BirdList, R.layout.lista_poulion_texts,new String[]{"sumForumStr","Birdname","Photo","birdid"},new int[]{R.id.bird_id,R.id.bird_name,R.id.bird_photo,R.id.birdid});
 
 
