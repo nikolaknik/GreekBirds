@@ -19,7 +19,7 @@
         android:background="@android:drawable/alert_dark_frame"
         android:backgroundTint="@color/colorExit"
         android:padding="13sp"
-        android:text="Σκοπός της εφαρμογής είναι η ενημέρωση σας για πολλά από τα Ωδικά Πουλιά της χώρας μας και εστίαση σε βασικές πληροφορίες. Συνδεδεμένο με την σελίδα στο FB: (https://www.facebook.com/odikapoulia/) και με την ιστοσελίδα: (https://odikapoulia.gr/)."
+        android:text="Σκοπός της εφαρμογής είναι η ενημέρωση σας για τα πιο συνηθησμένα Ωδικά Πουλιά της χώρας μας και εστίαση σε βασικές πληροφορίες. Συνδεδεμένο με την σελίδα στο FB: (https://www.facebook.com/odikapoulia/) και με την ιστοσελίδα: (https://odikapoulia.gr/)."
         android:textAlignment="center"
         android:textSize="23sp" />
 

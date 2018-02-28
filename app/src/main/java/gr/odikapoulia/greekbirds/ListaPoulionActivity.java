@@ -36,7 +36,7 @@ import android.media.MediaPlayer;
 public class ListaPoulionActivity extends AppCompatActivity {
 
     private ListView lv;
-    int numOfBirds = 27;
+    int numOfBirds = 2;
     public Boolean internetCheck;
     private AdView mAdView;
     public MediaPlayer mediaPlayer;
@@ -225,6 +225,8 @@ public class ListaPoulionActivity extends AppCompatActivity {
 
                     mydatabase.execSQL(new QueryInsert().QueryInsert());
                     mydatabase.execSQL(new QueryInsert().QueryInsert2());
+                    mydatabase.execSQL(new QueryInsert().QueryInsert3());
+
                 }
 
                 BirdList = new ArrayList<>();
